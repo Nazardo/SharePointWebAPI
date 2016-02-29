@@ -47,7 +47,7 @@ namespace Nazardo.SP2013.WebAPI.Integration
         /// <summary>
         /// Initializes any data/resources on application start.
         /// </summary>
-        protected void OnStart(HttpApplication httpApplication)
+        private void OnStart(HttpApplication httpApplication)
         {
             SPDiagnosticsService.Local.WriteTrace(0,
                                                   new SPDiagnosticsCategory(
