@@ -6,4 +6,7 @@
     <customAssembly location="System.Web.Http.WebHost.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll" />
     <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll" />
   </assemblies>
+  <features>
+    <featureReference itemId="74b9cc7b-3669-4669-b206-6e6333097471" />
+  </features>
 </package>

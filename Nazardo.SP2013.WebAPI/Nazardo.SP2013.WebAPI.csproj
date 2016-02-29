@@ -54,6 +54,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
@@ -62,15 +63,34 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\WebApiIntegration\WebApiIntegration.EventReceiver.cs">
+      <DependentUpon>WebApiIntegration.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Integration\CamelCaseExceptDictionaryKeysResolver.cs" />
+    <Compile Include="Integration\Http\CandidateAction.cs" />
+    <Compile Include="Integration\Http\DefaultHttpControllerSelector.cs" />
+    <Compile Include="Integration\Http\DictionaryExtentions.cs" />
+    <Compile Include="Integration\Http\Error.cs" />
+    <Compile Include="Integration\Http\HttpControllerTypeCache.cs" />
+    <Compile Include="Integration\Http\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Integration\Http\HttpRouteDataExtensions.cs" />
+    <Compile Include="Integration\Http\HttpRouteExtensions.cs" />
+    <Compile Include="Integration\WebApiAssemblyResolver.cs" />
+    <Compile Include="Integration\WebApiModule.cs" />
+    <Compile Include="Integration\WebAPIVirtualPathProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Features\WebApiIntegration\WebApiIntegration.feature">
+      <FeatureId>{74b9cc7b-3669-4669-b206-6e6333097471}</FeatureId>
+    </None>
     <None Include="key.snk" />
     <None Include="packages.config" />
     <None Include="Package\Package.package">
@@ -80,8 +100,11 @@
       <DependentUpon>Package.package</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Content Include="Features\WebApiIntegration\WebApiIntegration.Template.xml">
+      <DependentUpon>WebApiIntegration.feature</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
