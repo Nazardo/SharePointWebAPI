@@ -14,6 +14,7 @@ namespace Nazardo.SP2013.WebAPI.Integration
             return new List<Assembly> {
                 // Add here all assemblies containing WebApi controllers
                 // e.g. typeof(MyAssembly.ControllerClass).Assembly
+                typeof(Controllers.HelloController).Assembly
             };
         }
     }
