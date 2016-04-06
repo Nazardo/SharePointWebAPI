@@ -18,3 +18,9 @@ For this approach to work some internal classes from the System.Net.Http (openso
 
 A reference to the module is added into the Web Application configuration (web.config) via a Web Application Feature.
 The feature must be manually activated in Central Admin on the Web Application.
+
+### Anonymous authentication
+If you want to use your API with anonymous access you need to add a virtual directory, configured with Anonymous authentication, via IIS Manager.
+For instance, if your API has the route prefix /api/, you need to add a "api" virtual directory in IIS.
+
+Create a Virtual Directory (IIS 7) - https://technet.microsoft.com/en-gb/library/cc771804.aspx
